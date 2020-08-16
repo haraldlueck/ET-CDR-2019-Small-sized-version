@@ -1,0 +1,76 @@
+\documentclass[url, 11pt, fleqn, openany, chapterprefix=off]{scrbook}
+%\documentclass[url, 11pt, fleqn, openany, chapterprefix=off]{book}
+%\documentclass[url,11pt,fleqn]{book} % Default font size and left-justified equations
+%\documentclass[url,11pt,fleqn]{article} % Default font size and left-justified equations
+%\addtokomafont{disposition}{\rmfamily}
+%%% colors for quick comments
+\newcommand{\tcr}{\textcolor{red}}
+\newcommand{\tcb}{\textcolor{blue}}
+\newcommand{\tcm}{\textcolor{magenta}}
+\newcommand{\tcg}{\textcolor{green}}
+\newcommand{\tcp}{\textcolor{purple}}
+
+\usepackage[pagestyles]{titlesec}
+
+
+\input{structure.tex}
+
+\input{defs}
+%\include{ET_Macros}
+
+\RedeclareSectionCommand[beforeskip=0pt, afterskip=10pt, style=section,indent=0pt]{chapter}
+%\RedeclareSectionCommand[beforeskip=0pt, afterskip=10pt]{chapter}
+\RedeclareSectionCommand[afterskip=5pt, beforeskip=8pt]{section}
+
+% Andreas: removing all cite commands for now
+\renewcommand{\cite}[1]{\ignorespaces}
+% change paragraph format
+\usepackage{parskip}
+
+\begin{document}
+
+{\huge\bfseries
+\noindent Einstein Telescope:
+
+\vspace{2mm}
+\noindent Science Case, Design Study and Feasibility 
+Report}
+
+\vspace{3mm}
+{\noindent\Large January 2020}
+
+\vspace{6mm}
+\input{Summary/Summary.tex}
+%\linenumbers
+%\input{cover.tex}
+\input{Intro/Introduction.tex}
+
+%\vspace{-20mm}
+\input{ScienceCase/ScienceCase.tex}
+%\vspace{-20mm}
+\input{Detector/Detector.tex}
+\input{SiteInfra/SiteandInfrastructures.tex}
+\input{GlobalComputingInfrastructure/GlobalComputingInfrastructure.tex}
+
+%\appendix
+%\input{Appendix.tex}
+%\clearpage % works better than \FloatBarrier here
+%\phantomsection
+%\addcontentsline{toc}{section}{Bibliography}
+% \bibliographystyle{ieeetr} % changed to have numerical sorting of the citations
+%\bibliographystyle{et_dsd} %peter Wessels custom made style file for ET DS%commented by MM
+% Andreas: commented out for now
+%\bibliographystyle{utphys}
+%\bibliography{bibFiles/ET_CDR_2019_References,bibFiles/refsScienceCase}
+
+% Choose Phys. Rev. style for bibliography
+%\bibliographystyle{authordate2}
+
+%\newpage
+%\input{nomenclature.tex}
+%\printnomenclature[0.75in] 
+%\newpage
+%\section*{Impressum}
+\include{impressum.tex}
+\end{document}
+

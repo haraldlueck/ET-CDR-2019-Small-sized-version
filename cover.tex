@@ -1,0 +1,44 @@
+%----------------------------------------------------------------------------------------
+%	Cover, copyright and ToC
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+
+\AddToShipoutPicture*{\put(0,0)\centering{\includegraphics[width=1.45\textwidth]{Figures/Cover.png}}} % Image from ET Design study Mix of input from NIKHEF, Hubble ultra deep field (NASA), Waves: Bernard Schutz, black holes + waves Harald Lueck, composed and edited Harald Lueck
+\centering
+\par\normalfont\fontsize{50}{50}\sffamily\selectfont
+\textcolor{yellow}{\textbf{ET CDR Update 2019}}\\
+\vskip6.5cm
+\par\normalfont\fontsize{25}{25}\sffamily\selectfont
+\textsc{\textcolor{yellow}{{Conceptual Design Report for the Einstein Telescope}}}\par % Book title
+\vskip4cm
+\textcolor{yellow}{\LARGE ET Steering Committee Editorial Team}\par % Author name
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	Copyright page
+%----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+\noindent \textsc{ET Editorial Team}\\
+\noindent \textsc{}\\ % URL
+\noindent \\ % License information
+
+\noindent \textit{First release, xxx 2019} % Printing/edition date
+\newpage
+%----------------------------------------------------------------------------------------
+%	Table of Contents
+% No clue why it did not work with the chapterimage command
+% so I put it in directly
+%----------------------------------------------------------------------------------------
+
+
+\chapterimage{Figures/alfons-morales-410757-unsplash.jpg} % Table of contents heading image
+% https://unsplash.com/photos/YLSwjSy7stw
+\pagestyle{empty} % No headers
+\tableofcontents % Print the table of contents itself
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+\pagestyle{fancy} % Print headers again

@@ -1,0 +1,41 @@
+\section{Computing Infrastructure}
+\label{chap:GlobalComputingInfrastructure}
+As with most large experiments, the scale of ET computational challenges is such that the computing infrastructure architecture cannot be solely based on local resources. 
+We expect that most of ET computing will be done off-site in external computing centres, also including much of the low-latency searches. 
+So, the on-site computing infrastructure will be limited to what is needed for detector control, data buffering, preparation and transfer, unless special needs will be discovered (for example, the need for sizable AI clusters to manage some aspect of detector control such as alignement optimization). The physics community at large has a long experience in designing, building and managing global-scale computing infrastructures that can be exploited to cater to such needs; the main GW peculiarity here is the need to generate low-latency alerts
+for the wider astronomical community.  
+
+\subsection[Computing challenges and strategies]{Computing challenges and strategies}
+\label{sec:Computing challenges and strategies}
+ET will not, even by today's standards, generate a huge data volume with respect to the 1\,PB of data per year produced by a 2G interferometer; it is the quantity of valuable scientific information hidden in the data that will grow, and with it the amount of computational power needed to extract it.  Factoring in the expected technological developments in computing hardware (Moore's law is starting to fail for CPU performance, whereas its network capacity equivalent is not), it turns out that data management will most likely not be an outstanding issue; computing power itself, however, will be challenging, particularly for Compact Binary Coalescence matched-filter searches and parameter estimation. The better sensitivity implies a larger parameter space to explore, so much larger template libraries have to be used for matched-filter searches;  the computing power needed for parameter estimation of course scales with the expected event rate. 
+
+
+Even not taking into account complications such as the analysis of day-long
+signal candidates, for which the detector moves with respect to the source, a naive extrapolation from current activities gives an increase of \emph{at least} three orders of magnitude in computing power from 2G to 3G data. This is clearly out of reach, and a number of mitigation actions need to be planned (exactly like what is being done today in the HEP community for High-Luminosity LHC).
+
+A community of computing experts needs to be created alongside the GW scientists to optimize code and efficiently exploit heterogeneous hardware and software platforms: plain high throughput facilities for embarrassingly parallel workloads, high performance facilities for lower-level parallelism, hardware accelerators for e.g. Deep Learning training, and possibly, in the decade timescale, also more exotic technologies like quantum computing or neuromorphic processors. Again, this must be done in synergy with the larger physics community, which is facing similar issues.
+Activities such as mock data challenges will need to be planned very early in the project to explore possible data analysis strategies and optimise the scientific output of the available computing power. 
+
+\subsection[Distributed computing infrastructure]{Distributed computing infrastructure}
+\label{sec:Distributed computing infrastructure}
+Before and during the Advanced Detectors Era, distributed scientific computing activities in the EU and worldwide were mostly driven by LHC requirements, which led to the design and deployment of the WLCG infrastructure.
+In the timeframe of the initial ET phases, several other collaborations will reach LHC-like scales both in data sample size and computing power requirements, e.g. SKA and CTA, but also outside of the physics community, e.g. with the Human Brain project. Furthermore, High Luminosity LHC runs will increase both its data volume and computing requirements by large factors.
+We therefore expect that a large scale shared European computing infrastructure will be available to meet the needs of all these collaborations; several R\&D projects already exist or are being proposed to develop %the tools to build 
+such an infrastructure. We plan to use the services offered by the European Open Science Cloud as much as possible, since the ET requirements will represent only a fraction of the total computing activities.
+
+Some of the services that will form the framework for an ET Distributed
+Computing Infrastructure, either coming from the EOSC or evolution of existing
+services, include:
+\begin{itemize}
+\item archival storage services, with non-reproducible data duplicated over
+several ``core'' data centres;
+\item Data Management services to timely and reliably transfer raw data from the facility to the relevant external data centres, with functionalities for automatic issue detection and data loss recovery;
+\item network services, provided by NRENs and G\'{e}ant, possibly with dedicated links between the facility and the core data centres and/or a network environment similar to LHC-ONE, for data transfer, access and access to GPN;
+\item a data distribution infrastructure based on the concept of Data Lake and cache-based Content Delivery Network;
+\item cloud access to heterogeneous, distributed HTC and HPC resources and services in a set of core data centres and a network of other resource providers;
+\item a common AAI infrastructure, based on trusted IdPs and an ET authorization service, federated with the equivalent for existing 2G and other 3G collaborations;
+\item a public alert generation network, with event database services;
+\item an Open Data platform for general release of public data, compliant with FAIR principles, evolution of the existing GWOSC infrastructure and integrated with the Virtual Observatory platforms that will be available.
+\end{itemize}
+
+Most of the GW computing workloads are embarrassingly parallel, and so well suited to be run on conventional high-throughput distributed infrastructures, with the exception of the numerical relativity simulations used to prepare the template libraries. Several currently used analysis pipelines, and Deep Learning algorithm training, can profit from the use of GPUs and hardware accelerators.  The exact mix of  architectures needed will depend upon what will be available in ten years from now both in terms of computing technology and GW data analysis techniques.
